@@ -8,7 +8,9 @@ import os
 import socket
 import time
 
+import pywifi
 import requests
+from pywifi import const
 
 
 def get_ip():
@@ -204,8 +206,6 @@ while i <= 5:
             pingTest()  # 测试外网连通性
             time.sleep(1)
             print('认证完成，程序将在3秒后退出')
-            if is_new:
-                SQLTest.insertSQL(userId, userPwd, swfs, userIp)
             time.sleep(3)
             break
         else:
